@@ -17,7 +17,7 @@ void join(const std::vector<int> &from, std::vector<int> &to)
             ++it_temp, ++it_to;
         }
     }
-    if (it_from == from.end())                                                                                                //this part copies the rest of the last vector
+    if (it_from == from.end())                                                                                                 //this part copies the rest of the last vector
     {
         std::copy(it_temp, temp.end(), it_to);
     }
