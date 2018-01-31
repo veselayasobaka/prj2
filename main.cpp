@@ -1,4 +1,4 @@
-#include <iostream>   //lol2222222
+#include <iostream>   
 #include <vector>
 #include <ctime>
 #include <algorithm>
@@ -6,7 +6,7 @@ void join(const std::vector<int> &from, std::vector< int > &to);
 int main()
 {
     srand(time(0));
-    const int L1 = 5, L2 = 25;
+    const int L1 = 12, L2 = 12;
     std::vector<int> a1(L1);
     for (uint32_t i = 0; i < L1; ++i)
     {
@@ -29,32 +29,4 @@ int main()
     }
     std::cout << std::endl << a2.size() << std::endl;
     return 0;
-}
-void join(const std::vector<int> &from, std::vector<int> &to)
-{
-    std::vector<int> temp (to);
-    to.resize(from.size()+temp.size(), 0);
-    std::vector<int>::const_iterator it_from = from.begin();
-    std::vector<int>::iterator it_temp = temp.begin(), it_to = to.begin();
-    while (it_from != from.end() && it_temp != temp.end())
-    {
-        if (*it_from < *it_temp)
-        {
-            *it_to = *it_from;
-            ++it_from, ++it_to;
-        }
-        else
-        {
-            *it_to = *it_temp;
-            ++it_temp, ++it_to;
-        }
-    }
-    if (it_from == from.end())
-    {
-        std::copy(it_temp, temp.end(), it_to);
-    }
-    else
-    {
-        std::copy(it_from, from.end(), it_to);
-    }
 }
